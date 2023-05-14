@@ -18,8 +18,8 @@ void dataGenerator()
     ptc1_e = r->Uniform(1, max_energy);
     ptc2_e = max_energy - ptc1_e;
 
-    ptc1_p = ptc1_e / 2 * speed_of_light;
-    ptc2_p = ptc2_e / 2 * speed_of_light;
+    ptc1_p = ptc1_e / (2 * speed_of_light);
+    ptc2_p = ptc2_e / (2 * speed_of_light);
 
     ptc1_tha = r->Uniform(0, TMath::Pi());
     ptc2_tha = TMath::Abs(ptc1_tha - TMath::Pi());
