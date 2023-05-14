@@ -78,55 +78,8 @@ void fileGenerator(int N)
     output2->Close();
 }
 
-/*void createHist()
-{
-    TFile *input1 = new TFile("ptc1.root", "read");
-    TTree *ptc1_tree = (TTree *)input1->Get();
-
-    ptc1_tree->SetBranchAddress("Px", &ptc1_px, "ptc1_px/D");
-    ptc1_tree->SetBranchAddress("Py", &ptc1_py, "ptc1_py/D");
-    ptc1_tree->SetBranchAddress("Pz", &ptc1_pz, "ptc1_pz/D");
-    ptc1_tree->SetBranchAddress("E", &ptc1_e, "ptc1_e/D");
-    ptc1_tree->SetBranchAddress("theta", &ptc1_tha, "ptc1_tha/D");
-    ptc1_tree->SetBranchAddress("phi", &ptc1_phi, "ptc1_phi/D");
-
-    int N = ptc1_tree->GetEntries();
-
-    double min, max = 0;
-
-    for (int i = 0; i < N; i++)
-    {
-        ptc1_tree->GetEntry(i);
-        if (ptc1_px > max)
-        {
-            max = ptc1_px;
-        }
-        if (min > ptc1_px)
-        {
-            min = ptc1_px;
-        }
-    }
-
-    TCanvas *c1 = new TCanvas();
-
-    TH1F *hist = new TH1F("hist", "hist", N, min, max);
-
-    for (int i = 0; i < N; i++)
-    {
-        ptc1_tree->GetEntry(i);
-        hist->Fill(ptc1_px);
-    }
-
-    hist->Draw();
-}*/
-
 int Main()
 {
     fileGenerator(10000);
     return 0;
 }
-
-/*ROOT::Math::PxPyPzEVector ptc1(ptc1_px, ptc1_py, ptc1_pz, E_1);
-    ROOT::Math::Polar3DVector ptc1_agl(P_1, theta_1, phi_1);
-    ROOT::Math::PxPyPzEVector ptc2(ptc2_px, ptc2_py, ptc2_pz, E_2);
-    ROOT::Math::Polar3DVector ptc2_agl(P_2, theta_2, phi_2);*/
